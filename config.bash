@@ -6,10 +6,10 @@ export DB_NAME=sbtest
 # database username on DB_NAME
 #  Use USERNAME=none 
 #  to login to mongodb without using credentials.
-export USERNAME=myuser
+export USERNAME=none
 
 # database password to use for USERNAME
-export PASSWORD=mypass
+export PASSWORD=""
 
 # name of the server to connect to
 export MONGO_SERVER=localhost
@@ -18,10 +18,10 @@ export MONGO_SERVER=localhost
 export MONGO_PORT=27017
 
 # Use "yes" to load the collections
-DOLOAD=yes
+export DOLOAD=$1
 
 # Use "yes" to execute the benchmark
-DOQUERY=yes
+export DOQUERY=$2
 
 # Use a seed for the RNG, like $( date +%s )
 # This can be used to repeat, or not, the sequence of keys used per test.
@@ -37,27 +37,27 @@ export MONGO_BASEMENT=65536
 
 # number of collections to create for the benchmark
 #   valid values : integer > 0
-export NUM_COLLECTIONS=16
+export NUM_COLLECTIONS=$3
 
 # number of documents to maintain per collection
 #   valid values : integer > 0
-export NUM_DOCUMENTS_PER_COLLECTION=10000000
+export NUM_DOCUMENTS_PER_COLLECTION=$4
 
 # total number of documents to insert per "batch"
 #   valid values : integer > 0
-export NUM_DOCUMENTS_PER_INSERT=1000
+export NUM_DOCUMENTS_PER_INSERT=$5
 
 # total number of simultaneous insertion threads (for loader)
 #   valid values : integer > 0
-export NUM_LOADER_THREADS=8
+export NUM_LOADER_THREADS=$6
 
 # total number of simultaneous benchmark threads
 #   valid values : integer > 0
-export NUM_WRITER_THREADS=64
+export NUM_WRITER_THREADS=$7
 
 # run the benchmark for this many minutes
 #   valid values : intever > 0
-export RUN_TIME_MINUTES=10
+export RUN_TIME_MINUTES=$8
 export RUN_TIME_SECONDS=$[RUN_TIME_MINUTES*60]
 
 # write concern for the benchmark client
@@ -82,38 +82,40 @@ export SYSBENCH_AUTO_COMMIT=Y
 
 # number of documents to retrieve in range queries
 #   valid values : integer > 0
-export SYSBENCH_RANGE_SIZE=100
+export SYSBENCH_RANGE_SIZE=5
 
 # number of point queries per sysbench "transaction"
 #   valid values : integer >= 0
-export SYSBENCH_POINT_SELECTS=10
+export SYSBENCH_POINT_SELECTS=$9
 
 # number of simple range queries per sysbench "transaction"
 #   valid values : integer >= 0
-export SYSBENCH_SIMPLE_RANGES=1
+export SYSBENCH_SIMPLE_RANGES=${10}
 
 # number of aggregation queries per sysbench "transaction"
 #   valid values : integer >= 0
-export SYSBENCH_SUM_RANGES=1
+export SYSBENCH_SUM_RANGES=${11}
 
 # number of ordered range queries per sysbench "transaction"
 #   valid values : integer >= 0
-export SYSBENCH_ORDER_RANGES=1
+export SYSBENCH_ORDER_RANGES=${12}
 
 # number of distinct range queries per sysbench "transaction"
 #   valid values : integer >= 0
-export SYSBENCH_DISTINCT_RANGES=1
+export SYSBENCH_DISTINCT_RANGES=${13}
 
 # set all of the following 3 parameters to zero for a read-only benchmark
 
 # number of indexed updates per sysbench "transaction"
 #   valid values : integer >= 0
-export SYSBENCH_INDEX_UPDATES=1
+export SYSBENCH_INDEX_UPDATES=${14}
 
 # number of non-indexed updates per sysbench "transaction"
 #   valid values : integer >= 0
-export SYSBENCH_NON_INDEX_UPDATES=1
+export SYSBENCH_NON_INDEX_UPDATES=${15}
 
 # number of delete/insert operations per sysbench "transaction"
 #   valid values : integer >= 0
-export SYSBENCH_INSERTS=1
+export SYSBENCH_INSERTS=${16}
+
+export MONGO_DIR=${17}
