@@ -119,3 +119,4 @@ export SYSBENCH_NON_INDEX_UPDATES=${15}
 export SYSBENCH_INSERTS=${16}
 
 export MONGO_DIR=${17}
+export JAVAB=${18}

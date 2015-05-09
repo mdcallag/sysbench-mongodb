@@ -23,10 +23,10 @@ else
 fi
 
 CLASSPATH=mongo-java-driver-2.13.1.jar
-# javac -cp $CLASSPATH:$PWD/src src/jmongosysbenchload.java
-# javac -cp $CLASSPATH:$PWD/src src/jmongosysbenchexecute.java
+javac -cp $CLASSPATH:$PWD/src src/jmongosysbenchload.java
+javac -cp $CLASSPATH:$PWD/src src/jmongosysbenchexecute.java
 
-JAVA=/usr/local/jdk-8u25-64/bin/java
+JAVA=$JAVAB
 
 # load the data
 
