@@ -12,7 +12,7 @@ for num_thr in "${nthreads[@]}" ; do
 done
 
 echo load
-bash run.simple.bash yes no $nColl $nDocs 10 $nLoader $nThr 1 1 1 1 1 1 1 1 1 1
+bash run.simple.bash yes no $nColl $nDocs 10 $nLoader $nThr 1 1 1 1 1 1 1 1 1 1 $mongoDir $javaBin
 
 echo point query, v1
 for nt in "${nthreads[@]}" ; do bash run.simple.bash no yes $nColl $nDocs 10 1 $nt $nMins 1 0 0 0 0 0 0 0 $mongoDir $javaBin; mkdir pq1.nt${nt}; mv r.* mongoSysbenchExecute-* pq1.nt${nt} ; done
