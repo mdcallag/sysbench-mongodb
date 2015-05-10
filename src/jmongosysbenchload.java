@@ -106,7 +106,7 @@ public class jmongosysbenchload {
         logMe("  Server:Port = %s:%d",serverName,serverPort);
         logMe("  Username = %s",userName);
 
-        MongoClientOptions clientOptions = new MongoClientOptions.Builder().connectionsPerHost(2048).socketTimeout(60000).writeConcern(myWC).build();
+        MongoClientOptions clientOptions = new MongoClientOptions.Builder().connectionsPerHost(2048).socketTimeout(600000).writeConcern(myWC).build();
         ServerAddress srvrAdd = new ServerAddress(serverName,serverPort);
 
         // Credential login is optional.
